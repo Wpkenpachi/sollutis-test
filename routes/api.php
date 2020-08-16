@@ -20,9 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::group(['prefix' => 'store'], function () {
-    Route::get('test', function () {
-        return response()->json(['msg' => 'OK']);
-    });
     Route::get('get', 'StoreController@index');
     Route::get('get/{id}', 'StoreController@show');
     Route::post('create', 'StoreController@store');

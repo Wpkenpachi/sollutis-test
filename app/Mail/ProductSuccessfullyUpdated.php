@@ -31,7 +31,8 @@ class ProductSuccessfullyUpdated extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.updated_product')->with([
+        $email = env('MAIL_FROM_ADDRESS');
+        return $this->from($email)->view('emails.updated_product')->with([
             'nome' => $this->product->nome,
             'valor' => $this->product->valor,
         ])->subject("O produto ".ucfirst($this->product->nome)." foi atualizado na sua loja!");

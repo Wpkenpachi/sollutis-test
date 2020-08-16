@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Product;
+
 class ProductSuccessfullyCreated extends Mailable
 {
     use Queueable, SerializesModels;
